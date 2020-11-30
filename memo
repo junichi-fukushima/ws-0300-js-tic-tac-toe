@@ -1,0 +1,124 @@
+### SMACSS記法
+https://qiita.com/k_mori/items/7d3da61c712ff9513163
+①ベースルール　→デフォルトのスタイル
+以下の要素のデフォルトスタイルを設定する
+要素セレクタ（body、a）
+属性セレクタ（input[type=text]）
+擬似クラスセレクタ（a:hover）
+②レイアウトルール　→ページをエリアごとに分割
+・エリア分けする
+エリア分けに徹する。幅やmarginのみ、スタイルの記述などはしない。
+l- で命名する
+グリッドシステムを使う
+③モジュールルールを使う　→再利用可能な単位で見た目を定義
+<div class="l-main">
+  <div class="search">~</div>
+</div>
+<div class="l-sub">
+searchにサブクラスをつけることでsearchの再利用が可能になる
+  <div class="search search-vertical">~</div>
+</div>
+最下層となるタグ（ex：p、a、b、li、h2）は変更される可能性があるので付けない
+④ステート　→　レイアウトやモジュールの特定の状態の定義をする
+表示を切り替える際に使うクラス名は is ~ でつける
+.is-hidden {}
+.is-error {}
+.is-active {}
+被る場合は・・・・
+.is-dialog-focus {}
+.is-tab-active {}
+⑤テーマ　サイトのルック＆フィールを定義
+→色や見た目に関することは別で統一する
+###要素の取得などに関して
+https://qiita.com/kouh/items/dfc14d25ccb4e50afe89
+
+###windowオブジェクトとdocumentオブジェクトについて
+
+window(ブラウザ全体のことを指す) >> document(DOM) の順番で読み込まれる(DOMはAPI)
+ドキュメントがレンダリングされた→DOM操作をjsですることができる
+エレメント(要素)ノード: DOM の中での HTML 要素です。
+
+・Nodeはタグのこと
+
+###yarnとnpmに関して
+
+yarn/npm
+→Node.jsで動作するパッケージマネーじゃー(何のソフトウェアがインストールされたかを記録・バージョンの更新や削除を用意にする)
+Node.js
+→javascriptでサーバーサイドの動作を可能にするシステム
+
+javascript
+→元々フロントエンドの言語
+Node.jsが開発されjavascriptのフレームワークが生まれた(reactもその一種)
+
+npm
+→nodeのインストールをすることで一緒にDLされる
+<違い>バージョン違いの依存プログラム/パッケージをインストールする懸念あり
+
+yarn
+→プロジェクト設定ファイル(package.jsonを使用することができる)
+<違い>yarn.lockファイルによる、バージョン違いのプログラムがインストールされることはない
+
+
+####練習
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tic Tac Toe</title>
+  <link href="stylesheets/index.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+  <div class="container">
+    ここにかく
+  </div>
+  <script type="text/javascript" src="js/function.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+  </head>
+  <script>
+    const link = document.querySelector("a");
+    // textcontentはテキストの情報を変える
+    link.textContent ="aa"
+    link.href = 'https://developer.mozilla.org';
+    //  Document.querySelectorAll()
+    const para = document.createElement('p');
+    para.textContent = 'We hope you enjoyed the ride.';
+    sect.appendChild(para);
+    sect.removeChild(linkPara);
+    linkPara.remove();
+    // para.style.color = 'white';
+    // para.style.backgroundColor = 'black';
+    // para.style.padding = '10px';
+    // para.style.width = '250px';
+    // para.style.textAlign = 'center';
+    para.setAttribute('class', 'highlight');
+    // クラス名にhighlightという属性を与える
+
+    // クリックイベントの方法①addEventListenerを使う方法②onclickイベントを使う方法
+
+    btn.addEventListener('click', function() {
+    const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+    document.body.style.backgroundColor = rndCol;
+    // myElement.onclick = functionA; / myElement.addEventListener('click', functionA);
+    btn.onclick = function() {
+    videoBox.setAttribute('class', 'showing');
+  　}
+  videoBox.onclick = function() {
+  videoBox.setAttribute('class', 'hidden');
+　};　
+  });
+  </script>
+  <body>
+      <section>
+        <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+      </section>
+  </body>
+</html>
