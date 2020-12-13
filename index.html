@@ -4,33 +4,37 @@
   <meta charset="utf-8" />
   <title>Tic Tac Toe</title>
   <link href="stylesheets/index.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="../function.js"></script>
 </head>
+
 <body>
   <div class="container">
-    <h2>TIC TAC TOE</h2>
-    <ul>
-      <li>○</li>
-      <li>×</li>
-    </ul>
-    <table>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-    <p>Starting...</p>
-    <button>RESTART</button>
+    <main class="center-block w-50 align-items-center row justify-content-center column">
+      <h3>TIC TAC TOE</h3>
+      <ul class="row align-items-center justify-content-between py-2  w-40">
+        <li class="w-35 text-center p-1" id="turn_circle">○</li>
+        <li class="w-35 text-center p-1" id="turn_cross">×</li>
+      </ul>
+      <table>
+        <tr>
+          <td class="cell" id="1"></td>
+          <td class="cell" id="2"></td>
+          <td class="cell" id="3"></td>
+        </tr>
+        <tr>
+          <td class="cell" id="4"></td>
+          <td class="cell" id="5"></td>
+          <td class="cell" id="6"></td>
+        </tr>
+        <tr>
+          <td class="cell" id="7"></td>
+          <td class="cell" id="8"></td>
+          <td class="cell" id="9"></td>
+        </tr>
+      </table>
+      <p class="py-1" id="status">Starting...</p>
+      <button id="start_btn">RESTART</button>
+    </main>
   </div>
   <script type="text/javascript" src="js/function.js"></script>
 </body>
