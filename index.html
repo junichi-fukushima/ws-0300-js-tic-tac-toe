@@ -12,24 +12,24 @@
     <main class="center-block w-50 align-items-center row justify-content-center column">
       <h3>TIC TAC TOE</h3>
       <ul class="row align-items-center justify-content-between py-2  w-30">
-        <li class="turn w-45 text-center p-1" id="circle">○</li>
+        <li class="turn w-45 text-center p-1 active" id="circle">○</li>
         <li class="turn w-45 text-center p-1" id="cross">×</li>
       </ul>
       <table>
         <tr>
-          <td class="cell" id="0"></td>
-          <td class="cell" id="1"></td>
-          <td class="cell" id="2"></td>
+          <td class="cell" data-id="1"></td>
+          <td class="cell" data-id="2"></td>
+          <td class="cell" data-id="3"></td>
         </tr>
         <tr>
-          <td class="cell" id="3"></td>
-          <td class="cell" id="4"></td>
-          <td class="cell" id="5"></td>
+          <td class="cell" data-id="4"></td>
+          <td class="cell" data-id="5"></td>
+          <td class="cell" data-id="6"></td>
         </tr>
         <tr>
-          <td class="cell" id="6"></td>
-          <td class="cell" id="7"></td>
-          <td class="cell" id="8"></td>
+          <td class="cell" data-id="7"></td>
+          <td class="cell" data-id="8"></td>
+          <td class="cell" data-id="9"></td>
         </tr>
       </table>
       <p class="py-1" id="status">Starting...</p>
